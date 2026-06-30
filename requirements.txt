@@ -1,17 +1,3 @@
-# ==========================================================================
-# REQUIREMENTS — Speech Emotion Recognition (Streamlit App)
-# ==========================================================================
-# Install dengan:
-#     pip install -r requirements.txt
-#
-# Catatan:
-# - librosa butuh beberapa dependensi sistem (soundfile/audioread) yang
-#   biasanya otomatis terpasang lewat pip di Windows/Mac/Linux modern.
-# - tensorflow WAJIB ada jika ingin opsi model CNN aktif di aplikasi.
-#   Jika hanya ingin pakai SVM/Random Forest, baris tensorflow bisa
-#   dihapus/dikomentari untuk mempercepat instalasi & mengurangi ukuran.
-# ==========================================================================
-
 streamlit==1.38.0
 numpy==1.26.4
 pandas==2.2.2
@@ -20,6 +6,4 @@ librosa==0.10.2.post1
 matplotlib==3.8.4
 joblib==1.4.2
 soundfile==0.12.1
-
-# Untuk opsi model CNN (hapus baris ini jika hanya memakai SVM/Random Forest)
 tensorflow==2.16.1
