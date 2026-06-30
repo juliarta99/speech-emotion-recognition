@@ -295,23 +295,23 @@ with st.sidebar:
         f"- Kelas emosi: `{', '.join(bundle['label_encoder'].classes_)}`"
     )
 
-    # if cnn_model is None:
-    #     st.warning("Model CNN belum aktif.")
-    #     with st.expander("Lihat alasan & cara mengaktifkan CNN"):
-    #         st.write(cnn_error_msg)
-    #         st.markdown(
-    #             "**Langkah mengaktifkan CNN:**\n"
-    #             "1. Buka kembali notebook training kalian.\n"
-    #             "2. Pastikan sel CNN (bagian 6) sudah pernah dijalankan sampai selesai.\n"
-    #             "3. Pastikan sel **'Simpan CNN secara terpisah'** (bagian 7) sudah "
-    #             "dijalankan -- sel ini menghasilkan `cnn_model.keras` dan "
-    #             "`cnn_label_encoder.pkl`.\n"
-    #             "4. Salin (copy) KEDUA file tersebut dari folder kerja notebook ke "
-    #             "folder yang sama dengan `app.py` ini.\n"
-    #             "5. Restart aplikasi Streamlit (`streamlit run app.py` lagi)."
-    #         )
-    # else:
-    #     st.success("Model CNN aktif dan siap digunakan.")
+    if cnn_model is None:
+        st.warning("Model CNN belum aktif.")
+        with st.expander("Lihat alasan & cara mengaktifkan CNN"):
+            st.write(cnn_error_msg)
+            st.markdown(
+                "**Langkah mengaktifkan CNN:**\n"
+                "1. Buka kembali notebook training kalian.\n"
+                "2. Pastikan sel CNN (bagian 6) sudah pernah dijalankan sampai selesai.\n"
+                "3. Pastikan sel **'Simpan CNN secara terpisah'** (bagian 7) sudah "
+                "dijalankan -- sel ini menghasilkan `cnn_model.keras` dan "
+                "`cnn_label_encoder.pkl`.\n"
+                "4. Salin (copy) KEDUA file tersebut dari folder kerja notebook ke "
+                "folder yang sama dengan `app.py` ini.\n"
+                "5. Restart aplikasi Streamlit (`streamlit run app.py` lagi)."
+            )
+    else:
+        st.success("Model CNN aktif dan siap digunakan.")
 
 uploaded_file = st.file_uploader(
     "Unggah file audio (.wav)", type=["wav"],
