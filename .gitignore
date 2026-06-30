@@ -1,0 +1,21 @@
+# 1. Ignore semua file secara default
+*
+
+# 2. Jangan ignore struktur folder (wajib agar Git bisa masuk ke subfolder)
+!*/
+
+# 3. Kecualikan file .ipynb dan .py agar TETAP DILACAK
+!*.ipynb
+!*.py
+!*.pkl
+
+# 4. Pastikan file .gitignore ini sendiri tetap dilacak
+!.gitignore
+
+# ==========================================
+# PENGECUALIAN FOLDER SPESIFIK
+# ==========================================
+# Abaikan folder ini sepenuhnya (Git tidak akan mengecek isi di dalamnya sama sekali)
+dataset/
+dataset_split/
+.vscode/
